@@ -1,5 +1,7 @@
+"use client"
 import Link from 'next/link'
 import React from 'react'
+
 
 const links = [
     {
@@ -36,12 +38,13 @@ const links = [
 
 const Navbar = () => {
   return (
-    <div>
-       <Link href = "/">lll</Link>
-       <div>
+    <div className = "h-100 flex justify-between items-center">
+       <Link href = "/" className = "font-bold text-xl">weiherng2000</Link>
+       <div className = "flex items-center gap-5">
           {links.map(link => (
             <Link key = {link.id} href = {link.url}>{link.title}</Link>
           ))}
+          <button className = "mt-1 p-4 border-none bg-green-300 text-white cursor-pointer rounded-md "onClick = {() => {console.log("logged out")}}>Logout</button>
        </div>
     </div>
   )
