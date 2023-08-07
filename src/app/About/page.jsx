@@ -2,13 +2,14 @@ import React from 'react';
 import styles from "@/app/styles/about.module.css";
 import Image from "next/image";
 import Button from "@/components/Button/Button";
+import pic from "public/pexels-photo.jpeg";
 
 const  About = () => {
   return (
     <div className={styles.container}>
       <div className={styles.imgContainer}>
         <Image
-          src="/pexels-photo.jpg"
+          src= {pic}
           fill={true}
           alt=""
           className={styles.img}
