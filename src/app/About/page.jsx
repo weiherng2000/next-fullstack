@@ -8,7 +8,7 @@ const  About = () => {
     <div className={styles.container}>
       <div className={styles.imgContainer}>
         <Image
-          src="pexels-photo.jpg"
+          src="/pexels-photo.jpg"
           fill={true}
           alt=""
           className={styles.img}
