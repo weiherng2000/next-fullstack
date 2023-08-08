@@ -1,6 +1,8 @@
 "use client"
 import Link from 'next/link'
 import React from 'react'
+import Darkmode from '@/components/darkmode/darkmode'
+import styles from '@/components/navbar/navbar.module.css'
 
 
 const links = [
@@ -38,15 +40,20 @@ const links = [
 
 const Navbar = () => {
   return (
-    <div className = "h-100 flex justify-between items-center">
-       <Link href = "/" className = "font-bold text-xl">weiherng2000</Link>
-       <div className = "flex items-center gap-5">
-          {links.map(link => (
-            <Link key = {link.id} href = {link.url}>{link.title}</Link>
+    <div className={styles.container}>
+        <Link href="/" className={styles.logo}>
+          wh2000
+        </Link>
+        <div className={styles.links}>
+        <Darkmode />
+          {links.map((link) => (
+            <Link key={link.id} href={link.url} className={styles.link}>
+              {link.title}
+            </Link>
           ))}
-          <button className = "mt-1 p-4 border-none bg-green-300 text-white cursor-pointer rounded-md "onClick = {() => {console.log("logged out")}}>Logout</button>
-       </div>
-    </div>
+         
+        </div>
+      </div>
   )
 }
 
