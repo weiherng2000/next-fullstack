@@ -1,7 +1,7 @@
 "use client"
 import Link from 'next/link'
 import React from 'react'
-import Darkmode from '@/components/darkmode/darkmode'
+import Darkmode from '@/components/darkmode/Darkmode'
 import styles from '@/components/navbar/navbar.module.css'
 
 
