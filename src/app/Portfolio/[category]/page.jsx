@@ -4,6 +4,7 @@ import styles from "@/app/portfolio/[category]/page.module.css";
 import Button from "@/components/Button/Button";
 import Image from "next/image";
 
+//params is a special parameter for routing purposes we use params.category to refer to the category folder
 const Category = ({ params }) => {
   console.log(params);
   return (
