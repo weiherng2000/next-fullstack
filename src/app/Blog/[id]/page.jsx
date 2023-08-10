@@ -1,10 +1,9 @@
-import React from 'react'
-import styles from '@/app/blog/[id]/page.module.css'
+import React from "react";
+import styles from "@/app/blog/[id]/page.module.css";
 import Image from "next/image";
-import pic from "public/pexels-photo.jpeg";
+import { notFound } from "next/navigation";
 
-async function getData(id) 
-{
+async function getData(id) {
   const res = await fetch(`http://localhost:3000/api/posts/${id}`, {
     cache: "no-store",
   });
@@ -15,6 +14,7 @@ async function getData(id)
 
   return res.json();
 }
+
 
 export async function generateMetadata({ params }) {
 
@@ -64,4 +64,4 @@ const BlogPost = async ({ params }) => {
   );
 };
 
-export default BlogPost
+export default BlogPost;

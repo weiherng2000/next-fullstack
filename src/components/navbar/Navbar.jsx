@@ -44,7 +44,7 @@ const Navbar = () => {
   return (
     <div className={styles.container}>
       <Link href="/" className={styles.logo}>
-        lamamia
+      whdev
       </Link>
       <div className={styles.links}>
         <Darkmode/>

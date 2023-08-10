@@ -15,11 +15,8 @@ async function getData() {
   return res.json();
 }
 
-
 const Blog = async () => {
-
   const data = await getData();
-  
   return (
     <div className={styles.mainContainer}>
       {data.map((item) => (

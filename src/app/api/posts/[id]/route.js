@@ -4,7 +4,7 @@ import Post from "@/models/Post"
 
 export const GET = async (request,{params}) => {
     //fetch
-    const{id} = params;
+    const { id } = params;
  
     try{
         await connect;
