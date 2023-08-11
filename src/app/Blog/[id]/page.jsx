@@ -24,7 +24,7 @@ export async function generateMetadata({ params }) {
     description: post.desc,
   };
 }
-export const dynamic = 'force-dynamic'
+
 
 const BlogPost = async ({ params }) => {
   const data = await getData(params.id);
