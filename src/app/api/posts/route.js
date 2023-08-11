@@ -1,24 +1,36 @@
-import { NextResponse } from "next/server"
-import connect from '@/utils/db'
-import Post from "@/models/Post"
+import { NextResponse } from "next/server";
+import connect from "@/utils/db";
+import Post from "@/models/Post";
 
 export const GET = async (request) => {
-    //fetch
+  const url = new URL(request.url);
 
-    try{
-        await connect;
+  const username = url.searchParams.get("username");
 
-        const posts = await Post.find()
-        
-        //convert our posts to a json object
-        return new NextResponse(JSON.stringify(posts), {status :200});
+  try {
+    await connect();
 
-        
-    }
-    catch(err)
-    {
-        return new NextResponse("Database Error", {status :500});
-    }
+    const posts = await Post.find(username && { username });
 
-    
-}
+    return new NextResponse(JSON.stringify(posts), { status: 200 });
+  } catch (err) {
+    return new NextResponse("Database Error", { status: 500 });
+  }
+};
+
+export const POST = async (request) => {
+    //where the username,email and password is in the body
+  const body = await request.json();
+
+  const newPost = new Post(body);
+
+  try {
+    await connect();
+
+    await newPost.save();
+
+    return new NextResponse("Post has been created", { status: 201 });
+  } catch (err) {
+    return new NextResponse("Database Error", { status: 500 });
+  }
+};

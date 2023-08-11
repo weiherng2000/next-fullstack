@@ -8,7 +8,8 @@ const Register = () => {
   const [error, setError] = useState(null);
 
   const router = useRouter();
-
+  
+  //will submit info to api/auth/register folder
   const handleSubmit = async (e) => {
     e.preventDefault();
     const name = e.target[0].value;
