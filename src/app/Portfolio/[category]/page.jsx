@@ -3,7 +3,7 @@ import React from "react";
 import styles from "@/app/portfolio/[category]/page.module.css";
 import Button from "@/components/Button/Button";
 import Image from "next/image";
-import { items } from "@/app/portfolio/[category]/data";
+import { items } from './data';
 import { notFound } from "next/navigation";
 
 
