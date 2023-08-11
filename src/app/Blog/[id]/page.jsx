@@ -4,7 +4,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 
 async function getData(id) {
-  const res = await fetch(`https://verdant-gecko-39f799.netlify.app/api/posts/${id}`, {
+  const res = await fetch(`http://verdant-gecko-39f799.netlify.app/api/posts/${id}`, {
     cache: "no-store",
   });
 
@@ -24,6 +24,7 @@ export async function generateMetadata({ params }) {
     description: post.desc,
   };
 }
+export const dynamic = 'force-dynamic'
 
 const BlogPost = async ({ params }) => {
   const data = await getData(params.id);

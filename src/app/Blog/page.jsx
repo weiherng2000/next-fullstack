@@ -15,6 +15,8 @@ async function getData() {
   return res.json();
 }
 
+export const dynamic = 'force-dynamic'
+
 const Blog = async () => {
   const data = await getData();
   return (
