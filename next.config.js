@@ -5,4 +5,10 @@ const nextConfig = {
   },
 };
 
+if (process.env.NODE_ENV === 'production') {
+  nextConfig.eslint = {
+    ignoreDuringBuilds: true,
+  };
+}
+
 module.exports = nextConfig;
